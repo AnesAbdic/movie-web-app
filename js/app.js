@@ -1,5 +1,6 @@
 var myApp =angular.module("movieApp",['ui.router', 'ui.bootstrap']);
 
+//define view change based on different states
 myApp.config(function($stateProvider, $urlRouterProvider){
 $urlRouterProvider.otherwise('/movies');
 $stateProvider
@@ -25,7 +26,7 @@ $stateProvider
         });
 });
 
-
+//for keeping search data when we change between movie home and tv show home view
 myApp.factory('data', function () {
 
     var data = '';
@@ -39,7 +40,7 @@ myApp.factory('data', function () {
         }
     };
 });
-
+//for keeping search data when we change between movie home and tv show home view
 myApp.factory('dataMovies', function () {
 
    
@@ -54,7 +55,7 @@ myApp.factory('dataMovies', function () {
         }
     };
 });
-
+//for keeping search data when we change between movie home and tv show home view
 myApp.factory('dataShows', function () {
 
     var search = [];
