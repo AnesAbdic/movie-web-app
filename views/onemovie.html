@@ -1,0 +1,24 @@
+
+<div class="container">
+    <br>
+    <a ui-sref="movies" class="btn btn-primary">Back</a>
+    <br><br>       
+ </div>
+
+<div ng-controller="oneMovie">
+
+    <div class="container" >
+        <center> 
+
+            <img class="img-responsive img-thumbnail" ng-src="https://image.tmdb.org/t/p/original{{ details.poster_path }}" style="height:75%;"> 
+            <h2>{{ details.original_title }}</h2>
+                    <br>
+            <p style="width:70%; text-align: justify;">{{ details.overview }}</p>
+
+        </center>
+        <br>
+
+    </div>
+
+</div>
+  

@@ -1,0 +1,41 @@
+<div class="container" ng-controller="tvShowSearch">
+            
+    <div class="container">
+        <br>
+		<div class="btn-group">
+            <a ui-sref="movies" class="btn btn-primary">Movies</a>
+            <a ui-sref="tvshows" class="btn btn-primary">Tv Shows</a> 
+        </div>
+        <br><br>      
+     </div>
+
+    <div class="container">         
+        <input type="text" class="form-control" placeholder="Search" style="width:90%" ng-model="searchText" ng-change="change(text)" ng-minlength="3" >          
+
+        <div style="width:90%;">
+            <div  class="form-control"  ng-repeat="s in searchshows | limitTo:3">
+                <a ui-sref="show({id: {{ s.id }}})">
+                    <p>{{ s.original_name }}</p>
+                </a>
+            </div>
+        </div>
+    </div>
+        
+</div>
+
+<div ng-controller="topshowsController">
+    <br><br>
+    <div class="container" style="padding-right:10%;">
+        <div class="row" style="padding: 1px 3px;">
+            <div class="tvshow" ng-repeat="n in tvshows | limitTo:10">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <center>
+                        <a ui-sref="show({id: {{ n.id }}})">
+                            <img class="img-responsive img-thumbnail" ng-src="https://image.tmdb.org/t/p/original/{{ n.poster_path }}" style="height:55%">
+                            <h3>{{ n.original_name }}</h3>
+                        </a>
+                    </center><br>
+                    </div>                
+        </div>
+    </div>
+</div>
